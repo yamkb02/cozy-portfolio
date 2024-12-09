@@ -1,21 +1,153 @@
-/* Navbar.css */
+/* Base navbar styles */
 .navbar {
-  background-color: #61dafb;
-  padding: 10px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(var(--navbar-bg-color-rgb), 0.5); /* Reduced opacity */
+  padding: 10px 40px;
+  border-radius: 40px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  z-index: 1100;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  transition: transform 0.3s ease, left 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Navbar items styling */
 .navbar ul {
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  margin: 0;
   padding: 0;
+  justify-content: space-between; /* Spread items evenly across the entire container */
+  width: 100%; /* Ensure ul takes full width of the navbar */
+  align-items: center; /* Center items vertically */
 }
 
 .navbar li {
-  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Ensures equal width for each tab */
+  position: relative;
+  padding: 0 20px; /* Padding to create space between items */
+  text-align: center;
 }
 
+/* Faint divider between navbar items */
+.navbar li:not(:last-child) {
+  border-right: 1px solid rgba(var(--navbar-divider-color-rgb), 0.3); /* Faint line divider */
+}
+
+/* Navbar links styling */
 .navbar a {
   text-decoration: none;
-  color: #282c34;
+  color: var(--navbar-text-color); /* Dynamic text color */
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+  display: block;
+  padding: 10px 0; /* Add some vertical padding to links */
+}
+
+.navbar a:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  text-shadow: 0 0 12px var(--navbar-text-color); /* Glow effect matching text color */
+}
+
+/* Adjust spacing for content sections */
+.home, .about, .contact, .projects {
+  padding-top: 90px;
+}
+
+/* Navbar on smaller screens (less than 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    left: 20px; /* Align to the left */
+    transform: translateX(0); /* No centering */
+    padding: 10px 20px;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .navbar ul.open {
+    display: flex;
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .navbar li {
+    margin: 8px 0;
+    border-right: none !important; /* No dividers on small screens */
+    flex: unset; /* Allow tabs to collapse in size */
+  }
+
+  .navbar .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+    width: 100%;
+  }
+
+  .navbar .menu-toggle:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+  }
+
+  .navbar .hamburger-icon {
+    font-size: 1.5rem;
+    color: var(--navbar-text-color); /* Dynamic icon color */
+  }
+
+  .navbar .close-icon {
+    font-size: 1.8rem;
+    color: var(--navbar-text-color); /* Dynamic icon color */
+  }
+}
+
+/* Navbar on larger screens (above 768px) */
+@media (min-width: 769px) {
+  .navbar {
+    left: 50%; /* Center navbar */
+    transform: translateX(-50%); /* Center align horizontally */
+    padding: 10px 80px;
+  }
+
+  .navbar ul {
+    display: flex;
+    justify-content: space-between; /* Spread items evenly across the entire container */
+  }
+
+  .navbar li {
+    padding: 0 15px; /* Adjust padding to keep spacing equal */
+  }
+
+  .navbar .menu-toggle {
+    display: none;
+  }
+}
+
+/* Animation for the collapsible menu */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,4 +1,24 @@
 /* About.css */
 .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh; /* Ensures the section takes at least the full viewport height */
+  padding: 60px 20px;
   text-align: center;
+  background-color: var(--background-color); /* Use background color variable */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--link-color);
+  transition: color 0.3s;
+}
+
+.about p {
+  font-size: 1.2em;
+  color: var(--text-color);
 }

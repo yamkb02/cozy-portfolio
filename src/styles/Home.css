@@ -1,4 +1,184 @@
 /* Home.css */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+
 .home {
-  text-align: center;
+  position: relative;
+  height: 100vh;
+  width: auto;
+  overflow: hidden;
+  background-color: #8B0000; /* Fallback red background color */
+  background-size: cover; /* Ensure it covers the whole area */
+  background-position: bottom center; /* Center the image horizontally, align to bottom vertically */
+  background-repeat: no-repeat; /* Prevent repeating the background */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+  align-items: center; /* Vertically center the content */
+  padding-inline: 15%;
+  padding-top: 0; /* Ensure no padding at the top */
+}
+
+
+/* Background images for different screen sizes */
+@media (max-width: 480px) { /* Extra small screen */
+  .home {
+    background-image: url('/xs.jpg'); /* Background for extra small screens */
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) { /* Small screen */
+  .home {
+    background-image: url('/sm.jpg'); /* Background for small screens */
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) { /* Medium screen */
+  .home {
+    background-image: url('/md.jpg'); /* Background for medium screens */
+  }
+}
+@media (min-width: 1025px) { /* Large screen */
+  .home {
+    background-image: url('/lg.jpg'); /* Background for large screens */
+  }
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+.content {
+  position: relative;
+  text-align: right; /* Align text to the right */
+  color: white;
+  z-index: 2;
+  max-width: 1000px; /* Limit the width to prevent full-width expansion */
+  margin-bottom: 60px; /* Space for the button */
+  margin-top: 0; /* Reduced margin-top */
+}
+
+
+@media (max-height: 800px) {
+  .content {
+    margin-top: 10vh; /* Decrease margin-top for smaller viewports */
+  }
+}
+
+@media (max-height: 600px) {
+  .content {
+    margin-top: 5vh; /* Further decrease margin-top for even smaller viewports */
+  }
+}
+
+@media (max-height: 400px) {
+  .content {
+    margin-top: 2vh; /* Further decrease margin-top for very small viewports */
+  }
+}
+
+@font-face {
+  font-family: 'Ewert';
+  src: url('/src/assets/fonts/Codystar/Codystar-Regular.ttf') format('truetype');
+}
+
+.content h2 {
+  font-family: 'Ewert', sans-serif;
+  font-size: 6vw; /* Responsive font size based on viewport width */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content p {
+  font-size: 1.5vw; /* Responsive font size based on viewport width */
+  max-width: 500px; /* Limit the width to prevent full-width expansion */
+  margin-bottom: 30px;
+  margin-left: auto; /* Add this line */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: right; /* Align text to the right */
+}
+
+@media (max-width: 700px) {
+  .content h2 {
+    font-size: 8vw; /* Adjust font size for smaller screens */
+  }
+  .content p {
+    font-size: 4vw; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .content h2 {
+    font-size: 10vw; /* Adjust font size for extra small screens */
+  }
+  .content p {
+    font-size: 5vw; /* Adjust font size for extra small screens */
+  }
+}
+
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1em;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  margin-top: 20px; /* Move the button lower */
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Snowflakes styles */
+.home #snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.home .snowflake {
+  position: absolute;
+  top: -10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.5; /* Reduced opacity */
+  width: 8px;
+  height: 8px;
+  animation: snow 10s linear infinite;
+}
+
+@keyframes snow {
+  to {
+    transform: translate(20vw, 100vh); /* Add horizontal movement */
+  }
+}
+
+/* Randomize snowflakes size, speed, and positioning */
+.home .snowflake:nth-child(odd) {
+  width: 10px;
+  height: 10px;
+  animation-duration: 12s;
+}
+
+.home .snowflake:nth-child(even) {
+  width: 6px;
+  height: 6px;
+  animation-duration: 8s;
 }

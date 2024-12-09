@@ -1,0 +1,37 @@
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(var(--navbar-bg-color-rgb), 0.5); /* Translucent background */
+  color: var(--navbar-text-color); /* Dynamic text color */
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+.theme-toggle:hover {
+  background-color: rgba(var(--navbar-bg-color-rgb), 0.7); /* Slightly more opaque on hover */
+}
+
+.theme-toggle svg {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 45px;
+    height: 45px;
+  }
+}
