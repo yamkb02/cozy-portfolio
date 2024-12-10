@@ -12,12 +12,22 @@ body[data-theme='dark'] {
 }
 
 .contact-page {
-  height: 100vh;
+  min-height: 100vh; /* Changed from height to min-height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 20px; /* Added padding for better spacing */
+}
+
+/* Offset for anchor links */
+.contact-page::before {
+  content: "";
+  display: block;
+  height: 120px; /* Adjust based on navbar height */
+  margin-top: -120px; /* Same value as height */
+  visibility: hidden;
 }
 
 /* Hero Section */
@@ -52,7 +62,7 @@ body[data-theme='dark'] {
   border: 1px solid rgba(255, 255, 255, 0.2);
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 2.5in;  /* Width of a poker card */
+  width: 2.5in; /* Width of a poker card */
   height: 3.5in; /* Height of a poker card */
 }
 
