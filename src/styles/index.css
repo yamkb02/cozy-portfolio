@@ -1,6 +1,10 @@
-/* Add this to the top of your CSS (index.css or global styles) */
-html {
-  scroll-behavior: smooth; /* Enable smooth scrolling */
+/* Light and dark theme tiling with larger brick size */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100%;
 }
 
 /* Default light theme styles */
@@ -11,65 +15,69 @@ html {
   --text-color: #212529;
   --footer-background: #ffffff;
   --footer-text-color: #212529;
-  --navbar-bg-color-rgb: 255, 255, 255; /* RGB values for light theme */
-  --navbar-divider-color-rgb: 0, 0, 0; /* RGB values for light theme */
-  --navbar-text-color: #212529; /* Text color for light theme */
-  --bg-color: #f1f3f5; /* Background color for light theme */
-  --scrollbar-bg: var(--background-color); /* Scrollbar track */
-  --scrollbar-thumb: #9b9b9b; /* Scrollbar thumb */
+  --navbar-bg-color-rgb: 255, 255, 255;
+  --navbar-divider-color-rgb: 0, 0, 0;
+  --navbar-text-color: #212529;
+  --scrollbar-bg: var(--background-color);
+  --scrollbar-thumb: #9b9b9b;
+  --section-background-color: #e8e8e8;
 }
 
 /* Dark theme styles */
 body[data-theme='dark'] {
-  --primary-color: #ff6961; /* Pastel Christmas red */
-  --secondary-color: #77dd77; /* Pastel Christmas green */
-  --background-color: #121212;
+  --primary-color: #ff6961;
+  --secondary-color: #77dd77;
+  --background-color: #141414;
   --text-color: #eaeaea;
   --footer-background: #333333;
   --footer-text-color: #eaeaea;
-  --navbar-bg-color-rgb: 18, 18, 18; /* RGB values for dark theme */
-  --navbar-divider-color-rgb: 234, 234, 234; /* RGB values for dark theme */
-  --navbar-text-color: #eaeaea; /* Text color for dark theme */
-  --bg-color: #121212; /* Background color for dark theme */
-  --scrollbar-bg: var(--background-color); /* Scrollbar track */
-  --scrollbar-thumb: #646464; /* Scrollbar thumb */
+  --navbar-bg-color-rgb: 18, 18, 18;
+  --navbar-divider-color-rgb: 234, 234, 234;
+  --navbar-text-color: #eaeaea;
+  --scrollbar-bg: var(--background-color);
+  --scrollbar-thumb: #646464;
+  --card-background-color-light: #2a2a2a;
+  --section-background-color: #333333;
 }
 
+/* Background for the entire page */
 body {
   margin: 0;
+  height: 100%;
   background-color: var(--background-color);
+  background-image: url('../assets/brick-light.png');
+  background-size: 400px 400px; /* Larger brick size */
+  background-repeat: repeat;
+  background-attachment: fixed; /* Makes the background stick as you scroll */
+  background-position: center;
   color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s; /* Ensure smooth transition */
+  transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
 }
 
-/* index.css or global styles */
-body.theme-loading {
-  background-color: #000 !important; /* Set background to black until theme is loaded */
-}
-
-body.theme-loaded {
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transition for theme */
+/* Dark theme background */
+body[data-theme='dark'] {
+  background-image: url('../assets/brick-dark.png');
 }
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 12px; /* Adjust scrollbar width */
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--scrollbar-bg); /* Scrollbar track */
+  background: var(--scrollbar-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb); /* Scrollbar thumb */
+  background-color: var(--scrollbar-thumb);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollbar-thumb-hover); /* Scrollbar thumb hover effect */
+  background-color: #7a7a7a;
 }
 
-/* For mobile and smaller screens */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .navbar ul {
     flex-direction: column;

@@ -9,8 +9,17 @@
   border-radius: 40px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
   z-index: 1100;
+  -webkit-backdrop-filter: blur(10px); /* Frosted glass effect for Safari */
   backdrop-filter: blur(10px); /* Frosted glass effect */
   transition: transform 0.3s ease, left 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Collapsed navbar when scrolled */
+.navbar.scrolled {
+  top: 10px; /* Reduced top margin when scrolled */
+  padding: 5px 30px; /* Smaller padding on scroll */
+  border-radius: 30px; /* Smaller border-radius when scrolled */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
 /* Navbar items styling */
@@ -68,7 +77,6 @@
     transform: translateX(0); /* No centering */
     padding: 10px 20px;
   }
-
   .navbar ul {
     display: none;
     flex-direction: column;
@@ -76,18 +84,15 @@
     width: 100%;
     padding: 20px 0;
   }
-
   .navbar ul.open {
     display: flex;
     animation: slideIn 0.3s ease-out;
   }
-
   .navbar li {
     margin: 8px 0;
     border-right: none !important; /* No dividers on small screens */
     flex: unset; /* Allow tabs to collapse in size */
   }
-
   .navbar .menu-toggle {
     display: flex;
     align-items: center;
@@ -101,17 +106,14 @@
     transition: transform 0.3s ease, color 0.3s ease;
     width: 100%;
   }
-
   .navbar .menu-toggle:hover {
     color: var(--primary-color);
     transform: scale(1.1);
   }
-
   .navbar .hamburger-icon {
     font-size: 1.5rem;
     color: var(--navbar-text-color); /* Dynamic icon color */
   }
-
   .navbar .close-icon {
     font-size: 1.8rem;
     color: var(--navbar-text-color); /* Dynamic icon color */
@@ -125,16 +127,13 @@
     transform: translateX(-50%); /* Center align horizontally */
     padding: 10px 80px;
   }
-
   .navbar ul {
     display: flex;
     justify-content: space-between; /* Spread items evenly across the entire container */
   }
-
   .navbar li {
     padding: 0 15px; /* Adjust padding to keep spacing equal */
   }
-
   .navbar .menu-toggle {
     display: none;
   }
@@ -151,3 +150,4 @@
     transform: translateY(0);
   }
 }
+ 

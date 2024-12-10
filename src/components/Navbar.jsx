@@ -9,7 +9,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
+      setScrolled(window.scrollY > 50);  // Collapse navbar after scrolling 50px
     };
     window.addEventListener('scroll', handleScroll);
     return () => {

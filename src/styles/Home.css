@@ -7,21 +7,20 @@ html, body {
 
 .home {
   position: relative;
-  height: 100vh;
+  height: 100vh;  /* Full viewport height */
   width: auto;
   overflow: hidden;
   background-color: #8B0000; /* Fallback red background color */
-  background-size: cover; /* Ensure it covers the whole area */
-  background-position: bottom center; /* Center the image horizontally, align to bottom vertically */
-  background-repeat: no-repeat; /* Prevent repeating the background */
-  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: flex-end; /* Align content to the right */
-  align-items: center; /* Vertically center the content */
+  justify-content: flex-end;
+  align-items: center;
   padding-inline: 15%;
-  padding-top: 0; /* Ensure no padding at the top */
+  padding-top: 0;
+  scroll-snap-align: start;  /* Keep this line */
 }
-
 
 /* Background images for different screen sizes */
 @media (max-width: 480px) { /* Extra small screen */
