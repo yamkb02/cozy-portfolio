@@ -33,7 +33,7 @@ function Projects() {
       <div className="projects-header">
         <h2>My Projects</h2>
         <p>
-          Below are some of the projects I've worked on. Each one represents a unique challenge and showcases my skills in web development, design, and creativity.
+          Below are some of the projects I've worked on. Each one represents a unique challenge and showcases my skills in software development, design, and creativity.
         </p>
       </div>
       <div className="projects-container">
