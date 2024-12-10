@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Contact.css';
 
 function Contact() {
@@ -20,7 +20,7 @@ function Contact() {
           <FontAwesomeIcon icon={faGithub} className="contact-icon" />
           <h3>GitHub</h3>
           <p>Explore my projects and repositories.</p>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/yamkb02" target="_blank" rel="noopener noreferrer">
             Visit GitHub
           </a>
         </div>
@@ -28,7 +28,7 @@ function Contact() {
           <FontAwesomeIcon icon={faLinkedin} className="contact-icon" />
           <h3>LinkedIn</h3>
           <p>Connect with me professionally on LinkedIn.</p>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/markkennethbadilla" target="_blank" rel="noopener noreferrer">
             Visit LinkedIn
           </a>
         </div>
@@ -36,7 +36,15 @@ function Contact() {
           <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
           <h3>Email</h3>
           <p>Send me an email for inquiries or collaborations.</p>
-          <a href="mailto:youremail@example.com">Send Email</a>
+          <a href="mailto:markkennethbadilla@gmail.com">Send Email</a>
+        </div>
+        <div className="contact-card">
+          <FontAwesomeIcon icon={faFileAlt} className="contact-icon" />
+          <h3>Resume</h3>
+          <p>Check out my professional background and skills.</p>
+          <a href="/Badilla_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            View Resume
+          </a>
         </div>
       </div>
     </div>

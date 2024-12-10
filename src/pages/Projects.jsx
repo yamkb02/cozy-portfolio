@@ -2,25 +2,28 @@
 
 import React from 'react';
 import '../styles/Projects.css';
+import Project1 from '../assets/project1.png';
+import Project2 from '../assets/project2.png';
+import Project3 from '../assets/project3.png';
 
 const projects = [
   {
-    title: "Project One",
-    description: "A cutting-edge web application that solves real-world challenges.",
-    image: "https://via.placeholder.com/800x600?text=Project+One",
-    link: "#",
+    title: "SyncUp",
+    description: "SyncUp is a modern platform for managing memberships, events, communication, and payments, built with React, Node.js, and Supabase.",
+    image: Project1,
+    link: "https://syncup-org.vercel.app/",
   },
   {
-    title: "Project Two",
-    description: "A creative mobile app with stunning design and functionality.",
-    image: "https://via.placeholder.com/800x600?text=Project+Two",
-    link: "#",
+    title: "Progenetor",
+    description: "AI ChatBot Prompt Generator is a tool that helps create engaging prompts to improve AI conversations and enhance chatbot performance, built with React and Node.js",
+    image: Project2,
+    link: "https://progenetor.vercel.app/",
   },
   {
-    title: "Project Three",
-    description: "An AI-powered tool that revolutionizes productivity.",
-    image: "https://via.placeholder.com/800x600?text=Project+Three",
-    link: "#",
+    title: "MovieLens 20M Apriori Analysis",
+    description: "MovieLens 20M Apriori Analysis is a Python-powered data analytics project that uncovers insights from movie data to improve recommendations and enhance user experiences.",
+    image: Project3,
+    link: "https://g1-group-nime-final-project.streamlit.app/",
   },
 ];
 

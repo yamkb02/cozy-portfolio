@@ -52,6 +52,8 @@ body[data-theme='dark'] {
   border: 1px solid rgba(255, 255, 255, 0.2);
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 2.5in;  /* Width of a poker card */
+  height: 3.5in; /* Height of a poker card */
 }
 
 body[data-theme='dark'] .contact-card {
