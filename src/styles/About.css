@@ -50,11 +50,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 480px) {
-  .fun-facts {
-    grid-template-columns: 1fr;
-  }
-}
 #about {
   position: relative;
   top: -80px; /* Adjust this value based on your navbar height */
