@@ -9,7 +9,7 @@ function About() {
     { emoji: "🌿", fact: "I love exploring nature and find peace in the outdoors." },
     { emoji: "🎮", fact: "I enjoy playing Overwatch and always look forward to exciting matches." },
     { emoji: "📱", fact: "Social media is my go-to for connecting with people and following my favorite influencers." },
-    { emoji: "🗳️", fact: "Politics fascinates me – I believe in staying informed and advocating for peace." },
+    { emoji: "🎵", fact: "I love music – rap, pop, and musicals are my favorites." },
     { emoji: "☮️", fact: "I'm a natural peacekeeper and value harmony in all aspects of life." },
     { emoji: "🏡", fact: "I'm a homebody and love cozy days at home, especially in cold weather." },
     { emoji: "🔬", fact: "Science excites me – I’m always curious about how the world works." },
