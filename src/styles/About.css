@@ -1,7 +1,8 @@
 /* About Section Styling */
 .about {
   color: var(--text-color);
-  padding: 60px 20px;
+  padding-bottom: 0px;
+  padding-inline: 20px;
   font-family: Arial, sans-serif;
 }
 .container {
